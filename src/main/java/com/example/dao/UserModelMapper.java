@@ -19,7 +19,8 @@ public interface UserModelMapper {
     public int delete(Integer id);
     @Update("UPDATE user SET name=#{userModel.name},password=#{userModel.password} WHERE (id=#{id});")
     public int update(UserModel userModel,Integer id);
-//    public UserModel selectOne();
+    @Select("select * from user where id=#{id};")
+    public UserModel selectOne(Integer id);
     @Select("SELECT * from user")
     public List<UserModel> selectAll();
 

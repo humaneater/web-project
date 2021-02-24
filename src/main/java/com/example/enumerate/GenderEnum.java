@@ -1,5 +1,7 @@
 package com.example.enumerate;
 
+import java.util.Objects;
+
 /**
  * @author : lqy
  * @Date : 2021/2/23 17:17
@@ -22,5 +24,14 @@ public enum GenderEnum {
 
     public String getGender() {
         return gender;
+    }
+
+    public static String getGender(int code) {
+        for (GenderEnum value : GenderEnum.values()) {
+            if (Objects.equals(value.getCode(),code)) {
+                return value.gender;
+            }
+        }
+        return null;
     }
 }
