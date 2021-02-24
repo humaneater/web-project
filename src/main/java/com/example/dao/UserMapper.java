@@ -54,4 +54,10 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     List<User> selectByName(User record);
+
+    /**
+     * This method was the selection of all user
+     *
+     */
+    List<User> selectAll();
 }

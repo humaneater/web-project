@@ -176,4 +176,9 @@
       name = #{name}
     </if>
   </select>
+  <select id="selectAll" resultType="com.example.pojo.User">
+    select
+    *
+    from user
+  </select>
 </mapper>

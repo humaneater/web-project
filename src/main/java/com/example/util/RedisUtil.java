@@ -12,6 +12,12 @@ import java.util.Objects;
 public class RedisUtil {
     private static RedisTemplate redisTemplate = new RedisTemplate();
 
+    public static String get(String key){
+        if(Objects.nonNull(key)){
+           return redisTemplate.opsForValue().get(key).toString();
+        }
+        return null;
+    }
     public static void put(String key, String value) {
         if (Objects.nonNull(key) && Objects.nonNull(value)) {
             redisTemplate.opsForValue().set(key, value);

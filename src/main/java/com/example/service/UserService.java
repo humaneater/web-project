@@ -5,6 +5,8 @@ import com.example.enumerate.GenderEnum;
 import com.example.enumerate.StatusCode;
 import com.example.exception.BizException;
 import com.example.pojo.UserModel;
+import com.example.request.UserRequest;
+import com.example.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,6 +45,10 @@ public class UserService {
                 return StatusCode.FAILED;
             }
         }
+
+    }
+    public void updateToken(UserRequest userRequest, String token) {
+        RedisUtil.put(userRequest.getId().toString(),token);
     }
 
 //    public StatusCode logout() {

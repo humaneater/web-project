@@ -17,11 +17,9 @@ public class UserMapperTest {
     UserMapper userMapper;
     @Test
     void context() {
-        User user = new User();
-        user.setName("hhaaaaha");
-        List<User> users = userMapper.selectByName(user);
+        List<User> users = userMapper.selectAll();
         for (User user1 : users) {
-            System.out.println(user1.getId());
+            System.out.println(user1.toString());
         }
     }
 }
